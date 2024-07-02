@@ -53,9 +53,14 @@
     </div>
     <script>
         const products ={
-  49: { id: "POTS.24022.GN",Price: "$ 0.75", image: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ.jpg"},
+  49: { id: "POTS. 24022.GN",Price: "$0.75",image: "POTS.24020.GN.jpg" },
+
 
 }
+
+
+
+
         function getProduct(id) {
             return products[id] || null;
         }
@@ -73,6 +78,7 @@
                             <td> Retail Price</td>
                             <td>${product.Price}</td>
                         </tr>
+                    </table>
                 `;
             } else {
                 document.getElementById('product-info').innerHTML = '<p>Product not found.</p>';
