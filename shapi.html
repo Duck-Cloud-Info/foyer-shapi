@@ -52,14 +52,9 @@
         <div id="product-info"></div>
     </div>
     <script>
-        const products ={
-  49: { id: "POTS. 24022.GN",Price: "$0.75",image: "POTS.24020.GN.jpg" },
-
-
-}
-
-
-
+        const products = {
+            49: { id: "POTS.24022.GN", Price: "$0.75", image: "POTS.24020.GN.jpg" },
+        };
 
         function getProduct(id) {
             return products[id] || null;
@@ -68,14 +63,14 @@
         function displayProduct(product) {
             if (product) {
                 document.getElementById('product-info').innerHTML = `
-                    <img src="${product.image}" alt="${product.name}">
+                    <img src="${product.image}" alt="${product.id}">
                     <table>
                         <tr>
                             <td>Product Code</td>
                             <td>${product.id}</td>
                         </tr>
                         <tr>
-                            <td> Retail Price</td>
+                            <td>Retail Price</td>
                             <td>${product.Price}</td>
                         </tr>
                     </table>
