@@ -21,7 +21,12 @@
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+           
+            min-height: 100vh;
+           
+
         }
+        
         .product-container img {
             max-width: 100%;
             height: auto;
@@ -49,7 +54,11 @@
 </head>
 <body>
     <div class="product-container">
+        <img id="logo" src="/Foyer.png" alt="Logo" style="width:40vw; margin-top:12px;">
         <div id="product-info"></div>
+        <a id="website-url" href="https://www.foyer-shop.com/" style="margin-top: 20px;">www.foyer-shop.com</a>
+    </div>
+        
     </div>
     <script>
         const products ={
@@ -79,40 +88,72 @@
   24: { id: "3D00060AGY", name: "SK浅型ﾗｳﾝﾄﾞφ14ｱｯｼｭｸﾞﾚｲ", Retailprice: "$  4.35  ", Wholesalesprice: "$  2.61  ", image: "SK浅型ﾗｳﾝﾄﾞφ14ｱｯｼｭｸﾞﾚｲ.jpg" },
   25: { id: "3D00060CRI", name: "SK浅型ﾗｳﾝﾄﾞφ14ｻﾘｰｽ", Retailprice: "$  4.35  ", Wholesalesprice: "$ 2.61  ", image: "SK浅型ﾗｳﾝﾄﾞφ14ｻﾘｰｽ.jpg" },
   26: { id: "3D00060EGR", name: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ",Retailprice: "$  4.35  ", Wholesalesprice: "$ 2.61  ", image: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ.jpg" },
+  27: { id: "3D00060LI", name: "SK浅型ﾗｳﾝﾄﾞφ14ﾗｲﾑ",Retailprice: "$  4.35  ", Wholesalesprice: "$ 2.61  ", image: "SK浅型ﾗｳﾝﾄﾞφ14ﾗｲﾑ.jpg" },
+  28: { id: "3D00060ML", name: "SK浅型ﾗｳﾝﾄﾞφ14ﾐﾙｷｰ",Retailprice: "$  4.35  ", Wholesalesprice: "$ 2.61  ", image: "SK浅型ﾗｳﾝﾄﾞφ14ﾐﾙｷｰ.jpg" },
+  29: { id: "3D00060EGR", name: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ",Retailprice: "$  4.35  ", Wholesalesprice: "$ 2.61  ", image: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ.jpg" },
+  30: { id: "3D00060EGR", name: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ",Retailprice: "$  4.35  ", Wholesalesprice: "$ 2.61  ", image: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ.jpg" },
+  31: { id: "3D00060EGR", name: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ",Retailprice: "$  4.35  ", Wholesalesprice: "$ 2.61  ", image: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ.jpg" },
+  32: { id: "3D00060EGR", name: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ",Retailprice: "$  4.35  ", Wholesalesprice: "$ 2.61  ", image: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ.jpg" },
+  33: { id: "3D00060EGR", name: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ",Retailprice: "$  4.35  ", Wholesalesprice: "$ 2.61  ", image: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ.jpg" },
+  34: { id: "3D00060EGR", name: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ",Retailprice: "$  4.35  ", Wholesalesprice: "$ 2.61  ", image: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ.jpg" },
+  36: { id: "3D00060EGR", name: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ",Retailprice: "$  4.35  ", Wholesalesprice: "$ 2.61  ", image: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ.jpg" },
 
+  49: { id: "001", price: "$10.00", image: "PVｳｫｰﾀｰﾄﾞﾛｯﾌﾟφ3.5xH18.jpg" },
+  50: { id: "newProductId2", price: "$20.00", image: "newProduct2.jpg" },
 
 }
 
 
 
-
-        function getProduct(id) {
+function getProduct(id) {
             return products[id] || null;
         }
 
         function displayProduct(product) {
             if (product) {
-                document.getElementById('product-info').innerHTML = `
-                    <img src="${product.image}" alt="${product.name}">
-                    <table>
-                        <tr>
-                            <td>Product Code</td>
-                            <td>${product.id}</td>
-                        </tr>
-                        <tr>
-                            <td>Name</td>
-                            <td>${product.name}</td>
-                        </tr>
-                        <tr>
-                            <td> Retail Price</td>
-                            <td>${product.Retailprice}</td>
-                        </tr>
-                         <tr>
-                            <td>Wholesales Price</td>
-                            <td>${product.Wholesalesprice}</td>
-                        </tr>
-                    </table>
-                `;
+                let productInfoHtml = '';
+                if (product.name) {
+                    productInfoHtml += `
+                        <img src="${product.image}" alt="${product.name}">
+                        <table>
+                            <tr>
+                                <td>Product Code</td>
+                                <td>${product.id}</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>${product.name}</td>
+                            </tr>
+                            <tr>
+                                <td>Retail Price</td>
+                                <td>${product.Retailprice}</td>
+                            </tr>
+                            <tr>
+                                <td>Wholesales Price</td>
+                                <td>${product.Wholesalesprice}</td>
+                            </tr>
+                        </table>
+                    `;
+                } else {
+                    productInfoHtml += `
+                        <img src="${product.image}" alt="Product Image">
+                        <table>
+                            <tr>
+                                <td>Product Code</td>
+                                <td>${product.id}</td>
+                            </tr>
+                            <tr>
+                                <td>Price</td>
+                                <td>${product.price}</td>
+                            </tr>
+                        </table>
+                    `;
+                    // Change logo and URL for products with ID 49 and above
+                    document.getElementById('logo').src = "newLogo.png"; // New logo URL
+                    document.getElementById('website-url').href = "https://www2.salayhandmade.com/"; // New website URL
+                    document.getElementById('website-url').textContent = "ww2.salayhandmade.com"; // New website URL
+                }
+                document.getElementById('product-info').innerHTML = productInfoHtml;
             } else {
                 document.getElementById('product-info').innerHTML = '<p>Product not found.</p>';
             }
