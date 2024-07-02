@@ -52,11 +52,25 @@
         <div id="product-info"></div>
     </div>
     <script>
-        const products = {
-            1: { id: 1, name: "Product 1", price: "$10", image: "product1.jpg" },
-            2: { id: 2, name: "Product 2", price: "$20", image: "product2.jpg" },
-            // Add more products here
-        };
+        const products ={
+  1: { id: "2300004", name: "PVｼﾘﾝﾀﾞｰ φ10xH20", Retailprice: "$16.88", Wholesalesprice: "$10.13", image: "PVｼﾘﾝﾀﾞｰ φ10xH20.jpg" },
+  2: { id: "2300005", name: "PVｼﾘﾝﾀﾞｰ φ10xH30", Retailprice: "$23.18", Wholesalesprice: "$13.91", image: "PVｼﾘﾝﾀﾞｰ φ10xH30.jpg" },
+  3: { id: "2300036", name: "PVｼﾘﾝﾀﾞｰ φ12xH30", Retailprice: "$29.48", Wholesalesprice: "$17.69", image: "PVｼﾘﾝﾀﾞｰ φ12xH30.jpg" },
+  4: { id: "2300033", name: "PVｼﾘﾝﾀﾞｰ φ10xH25", Retailprice: "$21.92", Wholesalesprice: "$13.15", image: "PVｼﾘﾝﾀﾞｰ φ10xH25.jpg" },
+  5: { id: "2300120", name: "PVｽﾘﾑﾍﾞｰｽφ6xH19", Retailprice: "$9.95", Wholesalesprice: "$5.97",    image: "PVｽﾘﾑﾍﾞｰｽφ6xH19.jpg" },
+  6: { id: "2300068", name: "PVｽﾘﾑｵｸﾀｺﾞﾝ7xH18", Retailprice: "$11.91", Wholesalesprice: "$7.14", image: "PVｽﾘﾑｵｸﾀｺﾞﾝ7xH18.jpg" },
+  7: { id: "2300088", name: "PVｳｫｰﾀｰﾄﾞﾛｯﾌﾟφ3.5xH18", Retailprice: "$11.78", Wholesalesprice: "$7.07", image: "PVｳｫｰﾀｰﾄﾞﾛｯﾌﾟφ3.5xH18.jpg" },
+  8: { id: "2300173", name: "PVｽﾘﾑﾍﾞｰｽﾃﾞｺA 5.5xH16.5", Retailprice: "$5.54", Wholesalesprice: "$3.33", image: "PVｽﾘﾑﾍﾞｰｽﾃﾞｺA 5.5xH16.5.jpg" },
+  9: { id: "2300058CL", name: "PVﾃｨｱﾄﾞﾛCL8x10.5xH13", Retailprice: "$22.18", Wholesalesprice: "$13.31", image: "PVﾃｨｱﾄﾞﾛCL8x10.5xH13.jpg" },
+  10: { id: "2300200", name: "PVﾋﾟｯﾁｬｰﾍﾞｰｽ 19.5(10)xH26", Retailprice: "$22.68", Wholesalesprice: "$13.61", image: "PVﾋﾟｯﾁｬｰﾍﾞｰｽ 19.5(10)xH26.jpg" },
+  11: { id: "2300193", name: "PVｼﾞｬｸﾞﾍﾞｰｽ φ9.5(7.5)xH20", Retailprice: "$6.80", Wholesalesprice: "$4.08", image: "PVｼﾞｬｸﾞﾍﾞｰｽ φ9.5(7.5)xH20.jpg" },
+  12: { id: "2300198", name: "PVﾄﾗｲｱﾝｸﾞﾙﾍﾞｰｽ φ13.5xH19", Retailprice: "$17.51", Wholesalesprice: "$10.51", image: "PVﾄﾗｲｱﾝｸﾞﾙﾍﾞｰｽ φ13.5xH19.jpg" },
+  13: { id: "2300180", name: "PV円柱ｸﾘｽﾀφ9.5xH24.5", Retailprice: "$26.33", Wholesalesprice: "$15.80", image: "PV円柱ｸﾘｽﾀφ9.5xH24.5.jpg" },
+  14: { id: "3D00038AGY", name: "SKｽﾃｯﾌﾟ 10xH10 ｱｯｼｭｸﾞﾚｲ", Retailprice: "$2.77", Wholesalesprice: "$1.66", image: "SKｽﾃｯﾌﾟ 10xH10 ｱｯｼｭｸﾞﾚｲ.jpg" },
+}
+
+
+
 
         function getProduct(id) {
             return products[id] || null;
@@ -68,7 +82,7 @@
                     <img src="${product.image}" alt="${product.name}">
                     <table>
                         <tr>
-                            <td>ID</td>
+                            <td>Product Code</td>
                             <td>${product.id}</td>
                         </tr>
                         <tr>
@@ -76,8 +90,12 @@
                             <td>${product.name}</td>
                         </tr>
                         <tr>
-                            <td>Price</td>
-                            <td>${product.price}</td>
+                            <td> Retail Price</td>
+                            <td>${product.Retailprice}</td>
+                        </tr>
+                         <tr>
+                            <td>Wholesales Price</td>
+                            <td>${product.Wholesalesprice}</td>
                         </tr>
                     </table>
                 `;
