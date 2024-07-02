@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+        .product-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .product-container img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 300px;
+        }
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        @media (max-width: 600px) {
+            .product-container {
+                padding: 10px;
+            }
+            table td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="product-container">
+        <div id="product-info"></div>
+    </div>
+    <script>
+        const products ={
+  49: { id: "POTS.24022.GN",Price: "$ 0.75", image: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ.jpg"},
+  49: { id: "POTS.24022.GN",Price: "$ 0.75", image: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ.jpg"},
+  49: { id: "POTS.24022.GN",Price: "$ 0.75", image: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ.jpg"},
+  49: { id: "POTS.24022.GN",Price: "$ 0.75", image: "SK浅型ﾗｳﾝﾄﾞφ14ﾕｰﾛｸﾞﾘｰﾝ.jpg"},
+
+
+}
+
+
+
+
+        function getProduct(id) {
+            return products[id] || null;
+        }
+
+        function displayProduct(product) {
+            if (product) {
+                document.getElementById('product-info').innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <table>
+                        <tr>
+                            <td>Product Code</td>
+                            <td>${product.id}</td>
+                        </tr>
+                        <tr>
+                            <td> Retail Price</td>
+                            <td>${product.Price}</td>
+                        </tr>
+                `;
+            } else {
+                document.getElementById('product-info').innerHTML = '<p>Product not found.</p>';
+            }
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        const product = getProduct(productId);
+        displayProduct(product);
+    </script>
+</body>
+</html>
