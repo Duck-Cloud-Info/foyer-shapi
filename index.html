@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Catalog</title>
     <style>
-   body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -21,12 +21,16 @@
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            width: 100%;
-            max-width: 800px;
+           
+            min-height: 100vh;
+           
+
         }
+
         .product-container p {
             color: #c94e4e;
         }
+        
         .product-container img {
             max-width: 100%;
             height: auto;
@@ -36,7 +40,7 @@
             margin: 0 auto;
             border-collapse: collapse;
             width: 100%;
-            max-width: 750px;
+            max-width: 350px;
         }
         td {
             padding: 10px;
@@ -181,88 +185,76 @@
 115: { id: "shapi-67", price: "$4.50", image: "shapi-67.jpg" },
 116: { id: "shapi-68", price: "$4.00", image: "shapi-68.jpg" },
 
-117: {id: "-", name: "Sola Flower Wreath φ36",Retailprice: "$30.38", Wholesalesprice: "$9.49 ", image: "fake grass.jpg" },
+117: { id: "-", name: "Sola Flower Wreath φ36",Retailprice: "$30.38", Wholesalesprice: "$9.49", image: "fake grass.jpg" },
 118: { id: "-", name: "Sola Flower Wreath φ20",Retailprice: "$12.66", Wholesalesprice: "$5.06", image: "fake grass.jpg" },
 119: { id: "-", name: "Flower Wreath M φ31-39",Retailprice: "$25.32", Wholesalesprice: "$12.66", image: "fake grass.jpg" },
 120: { id: "-", name: "Flower Wreath S φ23-29",Retailprice: "$15.82", Wholesalesprice: "$5.06", image: "fake grass.jpg" },
-121: { id: "-", name: "Flower Ball",Retailprice: "$9.49", Wholesalesprice: "$3.16 ", image: "fake grass.jpg" },
-122: { id: "-", name: "Green Sheet 50*50",Retailprice: "$22.78", Wholesalesprice: "$9.49 ", image: "fake grass.jpg" },
-123: {id: "-", name: "PotFlower φ18*18",Retailprice: "$14.56", Wholesalesprice: "$6.33", image: "fake grass.jpg" },
+121: { id: "-", name: "Flower Ball",Retailprice: "$9.49", Wholesalesprice: "3.16", image: "fake grass.jpg" },
+122: { id: "-", name: "Green Sheet 50*50",Retailprice: "$22.78", Wholesalesprice: "$9.49", image: "fake grass.jpg" },
+123: { id: "-", name: "PotFlower φ18*18",Retailprice: "$14.56", Wholesalesprice: "$6.33:", image: "fake grass.jpg" },
 
 
 }
 
-
-const originalLogoUrl = "Foyer.png"; // URL for the original logo
-const originalWebsiteUrl = "https://www.foyer-shop.com/"; // Original website URL
-const originalWebsiteText = "www.foyer-shop.com"; // Original website text
 
 function getProduct(id) {
-    return products[id] || null;
-}
+            return products[id] || null;
+        }
 
-function displayProduct(product) {
-    if (product) {
-        let productInfoHtml = '';
-        if (product.name) {
-            productInfoHtml += `
-                <img src="${product.image}" alt="${product.name}">
-                <table>
-                    <tr>
-                        <td>Product Code</td>
-                        <td>${product.id}</td>
-                    </tr>
-                    <tr>
-                        <td>Name</td>
-                        <td>${product.name}</td>
-                    </tr>
-                    <tr>
-                        <td>Retail Price</td>
-                        <td>${product.Retailprice}</td>
-                    </tr>
-                    <tr>
-                        <td>Wholesales Price</td>
-                        <td>${product.Wholesalesprice}</td>
-                    </tr>
-                </table>
-            `;
-        } else {
-            productInfoHtml += `
-                <img src="${product.image}" alt="Product Image">
-                <table>
-                    <tr>
-                        <td>Product Code</td>
-                        <td>${product.id}</td>
-                    </tr>
-                    <tr>
-                        <td>Price</td>
-                        <td>${product.price}</td>
-                    </tr>
-                </table>
-            `;
-            
-            // Change logo and URL for products with ID 49 and above, revert for 117 and above
-            if (product.id >= 49 && product.id < 117) {
-                document.getElementById('logo').src = "shapi-logo.png"; // New logo URL
-                document.getElementById('website-url').href = "https://www2.salayhandmade.com/"; // New website URL
-                document.getElementById('website-url').textContent = "ww2.salayhandmade.com"; // New website URL
-            } else if (product.id >= 117) {
-                document.getElementById('logo').src = originalLogoUrl; // Original logo URL
-                document.getElementById('website-url').href = originalWebsiteUrl; // Original website URL
-                document.getElementById('website-url').textContent = originalWebsiteText; // Original website text
+        function displayProduct(product) {
+            if (product) {
+                let productInfoHtml = '';
+                if (product.name) {
+                    productInfoHtml += `
+                        <img src="${product.image}" alt="${product.name}">
+                        <table>
+                            <tr>
+                                <td>Product Code</td>
+                                <td>${product.id}</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>${product.name}</td>
+                            </tr>
+                            <tr>
+                                <td>Retail Price</td>
+                                <td>${product.Retailprice}</td>
+                            </tr>
+                            <tr>
+                                <td>Wholesales Price</td>
+                                <td>${product.Wholesalesprice}</td>
+                            </tr>
+                        </table>
+                    `;
+                } else {
+                    productInfoHtml += `
+                        <img src="${product.image}" alt="Product Image">
+                        <table>
+                            <tr>
+                                <td>Product Code</td>
+                                <td>${product.id}</td>
+                            </tr>
+                            <tr>
+                                <td>Price</td>
+                                <td>${product.price}</td>
+                            </tr>
+                        </table>
+                    `;
+                    // Change logo and URL for products with ID 49 and above
+                    document.getElementById('logo').src = "shapi-logo.png"; // New logo URL
+                    document.getElementById('website-url').href = "https://www2.salayhandmade.com/"; // New website URL
+                    document.getElementById('website-url').textContent = "ww2.salayhandmade.com"; // New website URL
+                }
+                document.getElementById('product-info').innerHTML = productInfoHtml;
+            } else {
+                document.getElementById('product-info').innerHTML = '<p>Product not found.</p>';
             }
         }
-        document.getElementById('product-info').innerHTML = productInfoHtml;
-    } else {
-        document.getElementById('product-info').innerHTML = '<p>Product not found.</p>';
-    }
-}
 
-const urlParams = new URLSearchParams(window.location.search);
-const productId = urlParams.get('id');
-const product = getProduct(productId);
-displayProduct(product);
-
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        const product = getProduct(productId);
+        displayProduct(product);
     </script>
 </body>
 </html>
