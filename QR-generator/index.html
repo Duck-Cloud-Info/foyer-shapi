@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free QR Code Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Free QR Code Generator</h1>
+        <input type="text" id="url" placeholder="Enter URL">
+        <button id="generateBtn">Generate QR Code</button>
+        <div id="qrCodeContainer"></div>
+        <a id="downloadLink" download="qrcode.png">Download QR Code</a>
+        <div id="counter">
+            <p><strong>Total QR Codes Generated: <span id="qrCount">0</span></strong></p>
+        </div>
+        <div class="footer">
+            <p>Created by DuckCloud</p>
+            <p>This QR code is created by DuckCloud and cannot be used by others without permission.</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
