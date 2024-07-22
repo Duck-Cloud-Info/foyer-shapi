@@ -3,12 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free QR Code Generator</title>
+    <title>QR Code Generator</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+    <script defer src="script.js"></script>
+    <script defer>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCS1qn4tleorH9H6fiO7ZyvSBES-H0mOws",
+            authDomain: "free-online-qr-generator.firebaseapp.com",
+            projectId: "free-online-qr-generator",
+            storageBucket: "free-online-qr-generator.appspot.com",
+            messagingSenderId: "1025788844544",
+            appId: "1:1025788844544:web:2cdaf2f55504d99ca696e5",
+            measurementId: "G-J592K1S7Z1"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
 </head>
 <body>
     <div class="container">
-        <h1>Free QR Code Generator</h1>
+        <h1>QR Code Generator</h1>
         <input type="text" id="url" placeholder="Enter URL">
         <button id="generateBtn">Generate QR Code</button>
         <div id="qrCodeContainer"></div>
@@ -21,7 +39,5 @@
             <p>This QR code is created by DuckCloud and cannot be used by others without permission.</p>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
